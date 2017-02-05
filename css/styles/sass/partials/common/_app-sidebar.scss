@@ -1,0 +1,13 @@
+.app-sidebar {
+  opacity: 0;
+  position: fixed;
+  z-index: 9999;
+  @include transition-property(left, opacity);
+  @include transition-duration(1s);
+  @include transition-timing-function(ease-in-out);
+
+  &.open {
+    opacity: 1;
+    left: 0 !important;
+  }
+}

@@ -1,0 +1,21 @@
+/* Drop shadow */
+@mixin drop-shadow($h-shadow: 0, $v-shadow: 3px, $blur: 0, $spead: 0, $shadow-color: null, $inset: null) {
+  -webkit-box-shadow: $h-shadow $v-shadow $blur $spead $shadow-color $inset;
+  -moz-box-shadow: $h-shadow $v-shadow $blur $spead $shadow-color $inset;
+  box-shadow: $h-shadow $v-shadow $blur $spead $shadow-color $inset;
+}
+
+.drop-shadow-hover {
+  //$shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3);
+  $shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+
+  @include transition-property(-webkit-box-shadow, -moz-box-shadow, box-shadow);
+  @include transition-duration(0.25s);
+  @include transition-timing-function(ease-in);
+
+  &:hover {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+  }
+}
